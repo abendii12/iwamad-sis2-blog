@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: var(--color-surface);
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--color-primary);
+}
+
+/* ===== Header: mobile first, stacked and centered ===== */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+header .brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.brand-name {
+  font-weight: 700;
+}
+
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+header nav a {
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+
+header nav a.active {
+  font-weight: 700;
+  border-bottom-color: var(--color-primary);
+}
+
+/* ===== Header from 640px: one row ===== */
+@media (min-width: 640px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: var(--space-4) var(--space-6);
+  }
+}
+
+/* ===== Main and footer ===== */
+main {
+  min-height: 80vh;
+  padding: var(--space-4);
+}
+
+.page {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+footer {
+  text-align: center;
+  padding: var(--space-4);
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-border);
+}
+
+/* ===== Posts: phone 1 column, desktop 3 columns ===== */
+.post-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 1024px) {
+  .post-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.post-title {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.post-date {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.post {
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.post h1,
+.post p {
+  margin: 0;
+}
+
+.contact-list {
+  padding-left: var(--space-4);
+}
