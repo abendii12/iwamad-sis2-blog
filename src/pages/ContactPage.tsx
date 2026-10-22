@@ -5,7 +5,7 @@ function ContactPage() {
       <p>Contacts</p>
       <ul className="contact-list">
         <li>
-          <a href="mailto:YOUR_EMAIL">aben.dilnazz06@gmail.com</a>
+          <a href="mailto:aben.dilnazz06@gmail.com">aben.dilnazz06@gmail.com</a>
         </li>
         <li>
           <a href="https://github.com/abendii12" target="_blank" rel="noreferrer">
