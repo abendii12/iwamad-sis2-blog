@@ -40,4 +40,17 @@ describe("Blog app", () => {
     expect(screen.getByRole("heading", { name: /404/ })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Back to Home" })).toBeInTheDocument();
   });
+
+  it("protects /favorites until the reader signs in", async () => {
+    const user = userEvent.setup();
+    renderAt("/favorites");
+
+    expect(screen.getByRole("heading", { name: "Sign in" })).toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: "Sign in" }));
+    expect(screen.getByRole("heading", { name: "My favorites" })).toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: "Sign out" }));
+    expect(screen.getByRole("heading", { name: "Sign in" })).toBeInTheDocument();
+  });
 });
